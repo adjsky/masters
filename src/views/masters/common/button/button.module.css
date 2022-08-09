@@ -1,0 +1,63 @@
+.container {
+  width: 100%;
+  display: flex;
+  padding: 24px 20px;
+  gap: 16px;
+  border-radius: 25px;
+  transition: 0.15s background linear;
+}
+
+.container[data-state="selected"] {
+  background: var(--gray-50);
+}
+
+.logo {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 10px;
+}
+
+.name {
+  font-size: 20px;
+  color: var(--black);
+  line-height: 1;
+  text-align: left;
+}
+
+.profit {
+  font-size: 20px;
+  color: var(--green);
+  line-height: 1;
+}
+
+@media (max-width: 360px) {
+  .container {
+    background: var(--white);
+    padding: 0;
+    cursor: default;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+
+  .profit {
+    font-size: 16px;
+  }
+}

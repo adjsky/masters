@@ -1,0 +1,151 @@
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  height: 100vh;
+
+  padding-top: 200px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  column-gap: 30px;
+}
+
+.delimeter {
+  border: none;
+  padding: 14px 0;
+  display: block;
+}
+
+.title {
+  font-size: 48px;
+  color: var(--black);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.masterContainer {
+  border: 1px solid var(--gray-white);
+  border-radius: 20px;
+
+  padding: 28px 24px;
+
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 20px;
+}
+
+.dataRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+}
+
+.dataBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.label {
+  color: var(--gray-100);
+  font-size: 14px;
+}
+
+.data {
+  color: var(--black);
+  font-size: 28px;
+}
+
+.copyButton {
+  max-width: 225px;
+  width: 100%;
+  height: 56px;
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 6px;
+
+  background: var(--purple);
+  transition: 0.15s background linear;
+}
+
+.copyButton[data-visible="mobile"] {
+  display: none;
+  max-width: none;
+}
+
+.copyButton:active {
+  background: #4f118f;
+}
+
+.navDots {
+  display: none;
+}
+
+.dotsList {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dot {
+  background: var(--gray-300);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot[data-state="active"] {
+  background: #c8c8d5;
+  width: 20px;
+  border-radius: 26px;
+}
+
+@media (max-width: 360px) {
+  .title {
+    font-size: 28px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .dataRow {
+    justify-content: flex-start;
+    gap: 36px;
+  }
+
+  .dataRow > *:nth-child(3) {
+    display: none;
+  }
+
+  .copyButton[data-visible="desktop"] {
+    display: none;
+  }
+
+  .copyButton[data-visible="mobile"] {
+    display: block;
+  }
+
+  .chart {
+    height: 200px;
+  }
+
+  .navDots {
+    display: block;
+  }
+}
